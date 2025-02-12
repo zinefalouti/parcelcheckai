@@ -74,6 +74,7 @@ function Classify() {
     .catch(error => {
         console.error('Error during classification:', error);
         alert("An error occurred during classification.");
+        hideLoader();
     });
 }
 
