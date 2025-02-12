@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logistics Parcel Check</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+    <link rel="icon" type="image/x-icon" href="static/images/favicon.png">
+
+</head>
+<body>
+    <!-- Global Container-->
+    <div class="container mx-auto px-4">
+
+        <!-- Header Area Starts Here -->
+        <div class="header">
+            <div class="grid grid-cols-12 gap-4">
+                <div class="col-span-6 lg:col-span-2">
+                    <a href="/">
+                        <img src="static/images/logo.png" alt="Parcel Scan AI Logo" class="logo"/>
+                    </a>
+                </div>
+                <div class="hidden lg:col-span-8 lg:grid">
+                    <nav>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/#classes">Classes</a></li>
+                        <li><a href="/#model">The Model</a></li>
+                        <li><a href="/#research">The Research</a></li>
+                    </nav>
+                </div>
+                <div class="col-span-6 lg:col-span-2 content-center justify-items-end">
+                    <button onclick="location.href='/scan';">
+                        Try Now
+                        <img src="static/images/arrow.svg" alt="Arrow"/>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Here Area Starts Here -->
+        <div class="hero-wrapper">
+            <div class="hero-art">
+                <img src="static/images/heroart.png" alt="Parcel Scan Artwork"/>
+            </div>
+            <div class="hero-content">
+                <h1><span>AI</span> To Classify & <span>Detect</span> Parcel <span>Damage</span></h1>
+            </div>
+        </div>
+        <div class="sub-hero">
+            <p>
+                This research explores how AI, using convolutional neural networks (CNNs), can automate 
+                the detection and classification of package damage. By analyzing photos, this solution help logisticians
+                streamline workflows, reduce errors, and improve delivery efficiency.
+            </p>
+            <div class="action">
+                <button onclick="location.href='/';" class="button-l">
+                        Research Paper
+                        <img src="static/images/arrowblue.svg" alt="Arrow"/>
+                </button>
+
+                <button onclick="location.href='/scan';" class="button-r">
+                    Get Started
+                    <img src="static/images/arrow.svg" alt="Arrow"/>
+                </button>
+
+            </div>
+        </div>
+
+        <!-- Scanner Mockup Area -->
+        <hr/>
+        <div class="mockarea">
+            <img src="static/images/mockup.png" alt="Parcel Detect AI"/>
+        </div>
+
+
+        <!-- Parcel 6 Blocks Start Here -->
+        <div class="grid grid-cols-12 gap-4 pb-16" id="classes">
+            <div class="col-span-12 lg:col-span-6 xl:col-span-4">
+                <div class="parcelblock">
+                    <div class="p-content">
+                        <h2>Envelopes</h2>
+                        <p>
+                            Envelope parcels are scanned for tears, bends, and damage. 
+                        </p>
+                        <button onclick="location.href='/scan';"><img src="static/images/plusbutton.svg" alt="Button"></button>
+                    </div>
+
+                    <img src="static/images/parcel1.png" alt="Envelopes" class="parcelicon"/>
+                </div>
+            </div>
+            <div class="col-span-12 lg:col-span-6 xl:col-span-4">
+                <div class="parcelblock">
+                    <div class="p-content">
+                        <h2>Pallets</h2>
+                        <p>
+                            Pallets are scanned for broken slats, cracks, and instability.
+                        </p>
+                        <button onclick="location.href='/scan';"><img src="static/images/plusbutton.svg" alt="Button"></button>
+                    </div>
+
+                    <img src="static/images/parcel2.png" alt="Pallets" class="parcelicon"/>
+                </div>
+            </div>
+            <div class="col-span-12 lg:col-span-6 xl:col-span-4">
+                <div class="parcelblock">
+                    <div class="p-content">
+                        <h2>Card Boxes</h2>
+                        <p>
+                            Card boxes are scanned for dents, tears, and crushing.
+                        </p>
+                        <button onclick="location.href='/scan';"><img src="static/images/plusbutton.svg" alt="Button"></button>
+                    </div>
+
+                    <img src="static/images/parcel3.png" alt="Card Boxes" class="parcelicon"/>
+                </div>
+            </div>
+            <div class="col-span-12 lg:col-span-6 xl:col-span-4">
+                <div class="parcelblock">
+                    <div class="p-content">
+                        <h2>Plastic Bags</h2>
+                        <p>
+                            Plastic bags are scanned for punctures, tears, and leaks.
+                        </p>
+                        <button onclick="location.href='/scan';"><img src="static/images/plusbutton.svg" alt="Button"></button>
+                    </div>
+
+                    <img src="static/images/parcel4.png" alt="Plastic Bags" class="parcelicon"/>
+                </div>
+            </div>
+            <div class="col-span-12 lg:col-span-6 xl:col-span-4">
+                <div class="parcelblock">
+                    <div class="p-content">
+                        <h2>Crates</h2>
+                        <p>
+                            Wooden crates are scanned for splits, damage, and instability.
+                        </p>
+                        <button onclick="location.href='/scan';"><img src="static/images/plusbutton.svg" alt="Button"></button>
+                    </div>
+
+                    <img src="static/images/parcel5.png" alt="Wooden Crates" class="parcelicon"/>
+                </div>
+            </div>
+            <div class="col-span-12 lg:col-span-6 xl:col-span-4">
+                <div class="parcelblock">
+                    <div class="p-content">
+                        <h2>IBC</h2>
+                        <p>
+                            IBC containers are scanned for dents, cracks, and leaks.
+                        </p>
+                        <button onclick="location.href='/scan';"><img src="static/images/plusbutton.svg" alt="Button"></button>
+                    </div>
+
+                    <img src="static/images/parcel6.png" alt="IBC" class="parcelicon"/>
+                </div>
+            </div>
+        </div>
+
+        <!-- Training The Model Area Starts Here -->
+
+        <hr/>
+
+        <div class="areatitle" id="model">
+            <h1>
+                Training the Model: <span>Powered by TensorFlow</span>
+            </h1>
+            <p>
+                At the core of every accurate prediction in Parcel Scan AI is a neural network meticulously trained using TensorFlow. 
+                The model was fed a mid-sized dataset of package images across six categories—Envelopes, IBCs, Wooden Crates, Card Boxes, 
+                Pallets, and Plastic Bags. Each category was divided into two classes: damaged and undamaged. As the model processed 
+                these images, it learned to distinguish subtle variations and patterns, such as punctures in plastic bags or dents 
+                in card boxes. Through this deep learning journey, the model evolved to identify and classify damage with exceptional 
+                precision, enabling a new standard in package safety and integrity for logistics.
+            </p>
+        </div>
+
+
+        <div class="grid grid-cols-12 gap-4 pt-12 pb-16">
+            <div class="col-span-6 md:col-span-4 lg:col-span-2">
+                <img src="static/images/ds-1-1.png" alt="Wooden Box Undamaged" class="dataset"/>
+                <img src="static/images/ds-1-2.png" alt="Wooden Box Damaged" class="dataset"/>
+            </div>
+            <div class="col-span-6 md:col-span-4 lg:col-span-2">
+                <img src="static/images/ds-2-1.png" alt="Plastic Bag Undamaged" class="dataset"/>
+                <img src="static/images/ds-2-2.png" alt="Plastic Bag Damaged" class="dataset"/>
+            </div>
+            <div class="col-span-6 md:col-span-4 lg:col-span-2">
+                <img src="static/images/ds-3-1.png" alt="Pallet Undamaged" class="dataset"/>
+                <img src="static/images/ds-3-2.png" alt="Pallet Damaged" class="dataset"/>
+            </div>
+            <div class="col-span-6 md:col-span-4 lg:col-span-2">
+                <img src="static/images/ds-4-1.png" alt="IBC Undamaged" class="dataset"/>
+                <img src="static/images/ds-4-2.png" alt="IBC Damaged" class="dataset"/>
+            </div>
+            <div class="col-span-6 md:col-span-4 lg:col-span-2">
+                <img src="static/images/ds-5-1.png" alt="Envelope Undamaged" class="dataset"/>
+                <img src="static/images/ds-5-2.png" alt="Envelope Damaged" class="dataset"/>
+            </div>
+            <div class="col-span-6 md:col-span-4 lg:col-span-2">
+                <img src="static/images/ds-6-1.png" alt="Card Box Undamaged" class="dataset"/>
+                <img src="static/images/ds-6-2.png" alt="Card Box Damaged" class="dataset"/>
+            </div>
+        </div>
+
+
+
+        <!-- Research and CNN Area Starts Here -->
+
+        <hr/>
+
+        <div class="areatitle" id="research">
+            <h1>
+                Research To Parcel Scan: <span>Leveraging AI for logistics</span>
+            </h1>
+            <p>
+                Raising the accuracy of the Parcel Scan AI model from 63% to 81% was no simple task. 
+                After a thorough review of existing literature and extensive experimentation, 
+                key adjustments were made to the model’s architecture, particularly to the hidden layers and 
+                the number of neurons in each. These refinements allowed for significant improvement in the model’s 
+                ability to classify damaged and undamaged parcels. However, despite these advancements, challenges remain. 
+                Parcel Scan still faces difficulties in certain edge cases, where subtle damages or complex features can confuse the model. 
+                Ongoing research and fine-tuning should continue to push the boundaries of what AI can achieve in logistics.
+            </p>
+        </div>
+
+        <div class="cnn">
+            <img src="static/images/cnn.png" alt="Parcel Detect AI Convolutional Neural Network"/>
+        </div>
+
+
+        <div class="grid grid-cols-12 gap-4 pb-16">
+            <div class="col-span-12 lg:col-span-6 flex">
+                <div class="steps">
+                    <h2>Data Collection & Preprocessing</h2>
+                    <p>
+                        A diverse dataset of parcel images across six categories (Envelopes, IBCs, Wooden Crates, Card Boxes, Pallets, and Plastic Bags) was collected. Each image was labeled as damaged or undamaged to build a strong training base. Preprocessing ensured consistent, clean data, laying the groundwork for accurate model predictions.
+                    </p>
+                    <div class="steps-footer">
+                        <button onclick="location.href='/scan';">
+                            <img src="static/images/plusbutton.svg" alt="Button"/>
+                        </button>
+
+                        <span>
+                            Preparing for Precision
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-12 lg:col-span-6 flex">
+                <div class="steps">
+                    <h2>Model Architecture Adjustments</h2>
+                    <p>
+                        Adjustments were made to the model’s architecture, focusing on hidden layers and neurons. By reviewing the literature and testing various configurations, the model’s accuracy improved from 63% to 81%, ensuring it better detects damage patterns across different parcel types.
+                    </p>
+                    <div class="steps-footer">
+                        <button onclick="location.href='/scan';">
+                            <img src="static/images/plusbutton.svg" alt="Button"/>
+                        </button>
+
+                        <span>
+                            Fine-Tuning for Accuracy
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-12 lg:col-span-6 flex">
+                <div class="steps">
+                    <h2>TensorFlow Training Process</h2>
+                    <p>
+                        The model was trained using TensorFlow, learning to differentiate between damaged and undamaged parcels. Through multiple epochs and hyperparameter fine-tuning, the training process refined the model’s ability to make accurate predictions, though certain edge cases remain challenging.
+                    </p>
+                    <div class="steps-footer">
+                        <button onclick="location.href='/scan';">
+                            <img src="static/images/plusbutton.svg" alt="Button"/>
+                        </button>
+
+                        <span>
+                            Learning with TensorFlow
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-12 lg:col-span-6 flex">
+                <div class="steps">
+                    <h2>Challenges & Ongoing Refinement</h2>
+                    <p>
+                        Despite progress, the model still faces challenges in handling subtle damage or irregular parcel shapes. These edge cases highlight areas for continued research and refinement, as real-world data and ongoing training help push the model’s capabilities forward.
+                    </p>
+                    <div class="steps-footer">
+                        <button onclick="location.href='/scan';">
+                            <img src="static/images/plusbutton.svg" alt="Button"/>
+                        </button>
+
+                        <span>
+                            Adapting to the Unknown
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Technologies Area Starts Here -->
+        <hr/>
+        
+        <div class="areatitle">
+            <h1>
+                Technologies: <span>Parcel Scan AI was built using</span>
+            </h1>
+        </div>
+
+
+        <div class="grid grid-cols-12 gap-4 pt-12 pb-8 justify-items-center">
+            <div class="col-span-6 md:col-span-4 lg:col-span-2">
+                <a href="https://www.python.org/" target="_blank">
+                    <img src="static/images/python.png" alt="Python"/>
+                </a>
+            </div>
+            <div class="col-span-6 md:col-span-4 lg:col-span-2">
+                <a href="https://www.tensorflow.org/" target="_blank">
+                    <img src="static/images/tensorflow.png" alt="Tensor Flow"/>
+                </a>
+            </div>
+            <div class="col-span-6 md:col-span-4 lg:col-span-2">
+                <a href="https://fastapi.tiangolo.com/" target="_blank">
+                    <img src="static/images/fastapi.png" alt="Fast API"/>
+                </a>
+            </div>
+            <div class="col-span-6 md:col-span-4 lg:col-span-2">
+                <a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank">
+                    <img src="static/images/javascript.png" alt="Javascript"/>
+                </a>
+            </div>
+            <div class="col-span-6 md:col-span-4 lg:col-span-2">
+                <a href="https://www.docker.com/" target="_blank">
+                    <img src="static/images/docker.png" alt="Docker"/>
+                </a>
+            </div>
+            <div class="col-span-6 md:col-span-4 lg:col-span-2">
+                <a href="https://keras.io/" target="_blank">
+                    <img src="static/images/keras.png" alt="Keras"/>
+                </a>
+            </div>
+        </div>
+
+
+        <!-- Footer Starts Here -->
+
+        <div class="footer">
+            <h1>Try The Parcel <span>Scan Model</span></h1>
+            <div class="action">
+                <button onclick="location.href='/';" class="button-l">
+                        Research Paper
+                        <img src="static/images/arrowblue.svg" alt="Arrow"/>
+                </button>
+
+                <button onclick="location.href='/scan';" class="button-r">
+                    Get Started
+                    <img src="static/images/arrow.svg" alt="Arrow"/>
+                </button>
+            </div>
+            <hr/>
+            <div class="footerlogo">
+                <img src="static/images/logo.png" alt="Parcel Scan AI Logo"/>
+            </div>
+            <h4>© <span id="year">2025</span>. All Rights Reserved, By Zine E. Falouti</h4>
+        </div>
+
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="static/tailwind.js"></script>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

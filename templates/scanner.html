@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logistics Parcel Check</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+    <link rel="icon" type="image/x-icon" href="static/images/favicon.png">
+
+</head>
+<body>
+
+    <!-- Global Container-->
+    <div class="container mx-auto px-4">
+
+        <!-- Header Area Starts Here -->
+        <div class="header">
+            <div class="grid grid-cols-12 gap-4">
+                <div class="col-span-6 lg:col-span-2">
+                    <a href="/">
+                        <img src="static/images/logo.png" alt="Parcel Scan AI Logo" class="logo"/>
+                    </a>
+                </div>
+                <div class="hidden lg:col-span-8 lg:grid">
+                    <nav>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/#classes">Classes</a></li>
+                        <li><a href="/#model">The Model</a></li>
+                        <li><a href="/#research">The Research</a></li>
+                    </nav>
+                </div>
+                <div class="col-span-6 lg:col-span-2 content-center justify-items-end">
+                    <button onclick="location.href='/';">
+                        Back
+                        <img src="static/images/arrow.svg" alt="Arrow"/>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="container mx-auto px-4 pt-8 pb-8">
+        <div class="grid grid-cols-12 gap-4">
+            <div class="col-span-12 lg:col-span-8">
+              <div class="preview" id="preview">
+                <img src="static/images/placeholder.png" class="placeholder" alt="Parcel Scan AI Preview" id="placeholder"/>
+                <img id="selectedImage" src="" alt="Selected Image" style="display: none;">
+              </div>
+            </div>
+            <div class="col-span-12 lg:col-span-4">
+                <div class="console">
+                    <h2>Upload An Image & Scan</h2>
+                    <label for="imageInput" class="file-upload">
+                        Upload Image
+                    </label>
+                    <input type="file" id="imageInput" accept="image/*" class="file-input">
+                    <hr/>
+                    <button id="classify">Scan The Image</button>
+                </div>
+                <div class="results">
+                    <h4>Scan Results:</h4>
+                    <div class="res-block">
+                        <p>Result: <span id="Result">Waiting...</span></p>
+                    </div>
+                    <div class="res-block">
+                        <p>Model's Confidence: <span id="Confidence">Waiting...</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Scan Session Stats Start Here -->
+    <div class="container mx-auto px-4 pt-4 pb-4">
+        <hr/>
+    </div>
+
+    <div class="container mx-auto px-4 pt-4 pb-8">
+        <div class="grid grid-cols-12 gap-4">
+            <div class="col-span-12 md:col-span-6 lg:col-span-4">
+                <div class="parcelblock">
+                    <div class="p-content">
+                        <h2>Envelopes</h2>
+                        <div class="stat-block">
+                            <h4>Clear</h4>
+                            <h3 id="p-1-1">0</h3>
+                        </div>
+                        <div class="stat-block">
+                            <h4>Damaged</h4>
+                            <h3 id="p-1-2">0</h3>
+                        </div>
+                    </div>
+
+                    <img src="static/images/parcel1.png" alt="Envelopes" class="parcelicon"/>
+                </div>
+            </div>
+            <div class="col-span-12 md:col-span-6 lg:col-span-4">
+                <div class="parcelblock">
+                    <div class="p-content">
+                        <h2>Pallets</h2>
+                        <div class="stat-block">
+                            <h4>Clear</h4>
+                            <h3 id="p-2-1">0</h3>
+                        </div>
+                        <div class="stat-block">
+                            <h4>Damaged</h4>
+                            <h3 id="p-2-2">0</h3>
+                        </div>
+                    </div>
+
+                    <img src="static/images/parcel2.png" alt="Pallets" class="parcelicon"/>
+                </div>
+            </div>
+            <div class="col-span-12 md:col-span-6 lg:col-span-4">
+                <div class="parcelblock">
+                    <div class="p-content">
+                        <h2>Card Boxes</h2>
+                        <div class="stat-block">
+                            <h4>Clear</h4>
+                            <h3 id="p-3-1">0</h3>
+                        </div>
+                        <div class="stat-block">
+                            <h4>Damaged</h4>
+                            <h3 id="p-3-2">0</h3>
+                        </div>
+                    </div>
+
+                    <img src="static/images/parcel3.png" alt="Card Boxes" class="parcelicon"/>
+                </div>
+            </div>
+            <div class="col-span-12 md:col-span-6 lg:col-span-4">
+                <div class="parcelblock">
+                    <div class="p-content">
+                        <h2>Plastic Bags</h2>
+                        <div class="stat-block">
+                            <h4>Clear</h4>
+                            <h3 id="p-4-1">0</h3>
+                        </div>
+                        <div class="stat-block">
+                            <h4>Damaged</h4>
+                            <h3 id="p-4-2">0</h3>
+                        </div>
+                    </div>
+
+                    <img src="static/images/parcel4.png" alt="Plastic Bags" class="parcelicon"/>
+                </div>
+            </div>
+            <div class="col-span-12 md:col-span-6 lg:col-span-4">
+                <div class="parcelblock">
+                    <div class="p-content">
+                        <h2>Crates</h2>
+                        <div class="stat-block">
+                            <h4>Clear</h4>
+                            <h3 id="p-5-1">0</h3>
+                        </div>
+                        <div class="stat-block">
+                            <h4>Damaged</h4>
+                            <h3 id="p-5-2">0</h3>
+                        </div>
+                    </div>
+
+                    <img src="static/images/parcel5.png" alt="Wooden Crates" class="parcelicon"/>
+                </div>
+            </div>
+            <div class="col-span-12 md:col-span-6 lg:col-span-4">
+                <div class="parcelblock">
+                    <div class="p-content">
+                        <h2>IBC</h2>
+                        <div class="stat-block">
+                            <h4>Clear</h4>
+                            <h3 id="p-6-1">0</h3>
+                        </div>
+                        <div class="stat-block">
+                            <h4>Damaged</h4>
+                            <h3 id="p-6-2">0</h3>
+                        </div>
+                    </div>
+
+                    <img src="static/images/parcel6.png" alt="IBC" class="parcelicon"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Current State of the model starts here -->
+    <div class="container mx-auto px-4 pt-4 pb-16">
+        <hr/>
+        <div class="areatitle" id="model">
+            <h1>
+                Current Model: <span>Latest training session’s statistics</span>
+            </h1>
+            <p>
+                The most recent training session yielded an accuracy of <span>80.42%</span>, showing strong performance on the training set. 
+                However, the validation accuracy remains lower at <span>56.25%</span>, indicating potential overfitting. 
+                The model’s loss sits at <span>59.1%</span>, while validation loss is significantly higher at <span>120.79%</span>, 
+                suggesting that further tuning is needed to improve generalization. This is largely due to the limited dataset, 
+                with only 30 images per class across 12 classes, making it challenging for the model to learn robust patterns 
+                for real-world parcel damage detection.
+            </p>
+        </div>
+    </div>
+
+
+    
+    
+    
+
+
+
+    <!-- Footer Starts Here -->
+    <div class="container mx-auto px-4">
+        <div class="footer">
+            <h1>Try The Parcel <span>Scan Model</span></h1>
+            <div class="action">
+                <button onclick="location.href='/';" class="button-l">
+                        Research Paper
+                        <img src="static/images/arrowblue.svg" alt="Arrow"/>
+                </button>
+
+                <button onclick="location.href='/';" class="button-r">
+                    Back
+                    <img src="static/images/arrow.svg" alt="Arrow"/>
+                </button>
+            </div>
+            <hr/>
+            <div class="footerlogo">
+                <img src="static/images/logo.png" alt="Parcel Scan AI Logo"/>
+            </div>
+            <h4>© <span id="year">2025</span>. All Rights Reserved, By Zine E. Falouti</h4>
+        </div>
+
+
+    </div>
+
+    <script src="static/api.js"></script>
+    <script src="static/tailwind.js"></script>
+</body>
+</html>
