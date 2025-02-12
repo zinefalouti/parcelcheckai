@@ -82,6 +82,15 @@ def scan(img_path):
     return {"prediction": pred_text, "confidence": confidence, "index": pred_result}
 
 
+#For Local Testing in case
+def main():
+    ...
+
+
+if __name__ == '__main__':
+    main()
+
+
 
 
 
