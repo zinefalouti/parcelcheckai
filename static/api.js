@@ -43,6 +43,9 @@ function Classify() {
 
     let result = document.querySelector('#Result');
     let confid = document.querySelector('#Confidence');
+    
+
+    showLoader();
 
     // Send a POST request to the /post endpoint
     fetch('/post', {
@@ -64,6 +67,8 @@ function Classify() {
         if (data.confidence >= 0.5){
             Stats(data.index);
         }
+
+        hideLoader();
         
     })
     .catch(error => {
@@ -180,3 +185,10 @@ function Stats(index){
 
 }
 
+function showLoader() {
+    document.querySelector('.loading-overlay').style.display = 'flex';
+}
+
+function hideLoader() {
+    document.querySelector('.loading-overlay').style.display = 'none';
+}
