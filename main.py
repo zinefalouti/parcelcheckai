@@ -5,7 +5,8 @@ import logisticmodel as lm
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from fastapi.responses import JSONResponse
-
+import uvicorn
+import os
 
 app = FastAPI()
 
@@ -48,3 +49,6 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
 
+if __name__ == "__main__":
+    port = int(os.getenv("PORT", 8000))  # Default to 8000 if PORT is not set
+    uvicorn.run(app, host="0.0.0.0", port=port)
